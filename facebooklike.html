@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Facebook</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .button{
+                font-size: larger;
+            }
+            div{
+                font-size: large;
+
+            }
+        </style>
+    </head>
+    <body>
+        <center><h2><i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp; Facebook </h2></center><br>
+        <center>
+            <div>
+                <img src="salman.jpg" style="width: 250px; height: 250px;"><br><br>
+                <button class="button" id="color" onclick="like()">Like &nbsp;<i class="fa fa-thumbs-up" style="font-size:20px"></i></button>&nbsp;&nbsp; &nbsp;
+                <button class="button" id="color2" onclick="dislike()">Dislike &nbsp;<i class="fa fa-thumbs-down" style="font-size:20px"></i></button><br><br>
+                Total Likes&nbsp;&nbsp;<span id="like">0</span>&nbsp;&nbsp; Total Dislikes&nbsp;&nbsp;<span id="dislike">0</span>
+
+            </div>
+        </center>
+        <script>
+            var likes=0;
+            var dislikes=0;
+            function like(){
+                likes=likes+1;
+                document.getElementById('like').innerHTML=likes;
+                document.getElementById('color').style.color="blue";
+            }
+            function dislike(){
+                dislikes=dislikes+1;
+                document.getElementById('dislike').innerHTML=dislikes;
+                document.getElementById('color2').style.color="red";
+            }
+        </script>
+    </body>
+</html>

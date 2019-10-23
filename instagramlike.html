@@ -9,9 +9,7 @@
                 font-size: xx-large;
             }
             .img{
-                margin-top: 20px;
-                
-                height: 300px;
+                height: 250px;
             }
             body{
                 background-image: url(bg2.webp);
@@ -25,8 +23,8 @@
         <h1>Welcome to Instagam</h1>
         <div>
             <center style="font-size: 30px;">
-                <img "img" src="salman.jpg"><br><br>
-                <i onclick="like()" ondblclick="dislike()" class="fa fa-heart" id="color" style="font-size: 60px;"></i>
+                <img class="img" src="salman.jpg"><br><br>
+                <i onclick="like()" ondblclick="dislike()" class="fa fa-heart" id="color" style="font-size: 100px;"></i>
                 <br><br>
                 Total Likes &nbsp;<span id="like">0</span> &nbsp;&nbsp; Total Dislikes &nbsp;<span id="dislike">0</span>
                  
@@ -44,8 +42,9 @@
             function dislike(){
                 dislikes=dislikes+1;
                 document.getElementById('dislike').innerHTML=dislikes;
-                document.getElementById('color').style.color="black";
+                document.getElementById('color').style.color="white";
             }
         </script>
+        
     </body>
 </html>
