@@ -37,10 +37,30 @@
             function like(){
                 likes=likes+1;
                 document.getElementById('like').innerHTML=likes;
+                if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("like").innerHTML =  localStorage.clickcount ;
+  } else {
+    document.getElementById("like").innerHTML = "Sorry, your browser does not support web storage...";
+  }
                 document.getElementById('color').style.color="red";
             }
             function dislike(){
                 dislikes=dislikes+1;
+                if(typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("dislike").innerHTML = localStorage.clickcount;
+  } else {
+    document.getElementById("dislike").innerHTML = "Sorry, your browser does not support web storage...";
+  }
                 document.getElementById('dislike').innerHTML=dislikes;
                 document.getElementById('color').style.color="white";
             }

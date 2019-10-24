@@ -17,9 +17,9 @@
         <center>
             <div>
                 <img src="salman.jpg" style="width: 250px; height: 250px;"><br><br>
-                <button class="button" id="color" onclick="like()">Like &nbsp;<i class="fa fa-thumbs-up" style="font-size:20px"></i></button>&nbsp;&nbsp; &nbsp;
-                <button class="button" id="color2" onclick="dislike()">Dislike &nbsp;<i class="fa fa-thumbs-down" style="font-size:20px"></i></button><br><br>
-                Total Likes&nbsp;&nbsp;<span id="like">0</span>&nbsp;&nbsp; Total Dislikes&nbsp;&nbsp;<span id="dislike">0</span>
+                <button class="button" onclick="like()">Like &nbsp;<i id="color" class="fa fa-thumbs-up" style="font-size:20px"></i></button>&nbsp;&nbsp; &nbsp;
+                <button class="button" onclick="dislike()">Dislike &nbsp;<i  id="color2" class="fa fa-thumbs-down" style="font-size:20px"></i></button><br><br>
+                Total Likes&nbsp;&nbsp;<span id="like">0</span>&nbsp;&nbsp; Total Dislikes&nbsp;&nbsp;<span id="dislike1">0</span>
 
             </div>
         </center>
@@ -29,11 +29,31 @@
             function like(){
                 likes=likes+1;
                 document.getElementById('like').innerHTML=likes;
-                document.getElementById('color').style.color="blue";
-            }
+                if(typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount)+1;
+                } else {
+                    localStorage.clickcount = 1;
+                    }
+                    document.getElementById("like").innerHTML =  localStorage.clickcount;
+                } else {
+                    document.getElementById("like").innerHTML = "Sorry, your browser does not support web storage...";
+                }
+                    document.getElementById('color').style.color="blue";
+                }
             function dislike(){
                 dislikes=dislikes+1;
-                document.getElementById('dislike').innerHTML=dislikes;
+                document.getElementById('dislike1').innerHTML=dislikes;
+                if(typeof(Storage) !== "undefined") {
+                    if (localStorage.clickcount) {
+                        localStorage.clickcount = Number(localStorage.clickcount)+1;
+                    } else {
+                        localStorage.clickcount = 1;
+                    }
+                    document.getElementById('dislike1').innerHTML = localStorage.clickcount;
+                } else {
+                    document.getElementById('dislike1').innerHTML = "Sorry, ur browser not suppoert..";
+                }
                 document.getElementById('color2').style.color="red";
             }
         </script>
